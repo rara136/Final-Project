@@ -1,0 +1,137 @@
+header, section {
+	display: block;
+  }
+body {
+	background-color: #f9f8f6;
+	background-position: center;
+	font-family: Georgia, Times, serif;
+	line-height: 1.4em;
+	margin: 0px;
+  }
+
+h1 {
+	background-color: #DDDDDD;
+	color: black;
+	padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+	margin-bottom: 0px;
+}
+
+section.vision h1 {
+  background-color: black;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: arial;
+  margin-bottom: 0px;
+  color: white;
+}
+section.vision p {
+  margin-top: 0px;
+  vertical-align: top;
+  text-align: center;
+  color: white;
+  line-height: 150%;
+  font-style: italic;
+  font-family: monospace;
+  font-size: 35px;
+  padding-top: 140px;
+  padding-bottom: 140px;
+  background-color: blue;
+/*  background-image:url("../images/yokohama_twilight.jpg"); */
+  background-position: center;
+}
+
+article.developedCountries {
+	display: flex;
+}
+
+article.developingCountries {
+	display: flex;
+}
+
+section.programs h1{
+	padding-left: 15px;
+	font-size: 30px;
+}
+
+section.programs h2{
+	padding-left: 20px;
+	margin-top: 0px;
+  padding-bottom: 20px;
+	font-size: 25px;
+	margin-bottom: 0px;
+	color: #0000FF;
+}
+
+section.programs p{
+	margin-top: 0px;
+	font-size: 15px;
+	padding-left: 30px;
+}
+
+section.programs h3{
+	font-size: 15px;
+	padding-left: 30px;
+}
+
+section.programs li{
+	line-height: 230%;
+}
+
+div.Internship1 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #EEFFFF;
+	padding-right: 10px;
+	word-wrap: break-word;
+	width: 50%;
+	height: auto;
+}
+
+div.StudyAbroad1 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 20px;
+	background-color: #FFEEFF;
+	margin-bottom: 15px;
+	height: auto;
+	width: 50%;
+	word-wrap: break-word;
+}
+
+div.Internship2 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #EEFFFF;
+	height: auto;
+	width: 50%;
+	word-wrap: break-word;
+}
+
+div.Volunteer2 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #FFEEFF;
+	margin-bottom: 15px;
+	height: auto;
+	width: 50%;
+	word-wrap: break-word;
+}
+
+.hidden {
+	display: none;
+  padding-left: 15%;
+  color: gray;
+}
+
+.SHOW {
+  cursor: pointer;
+  }
+
+.SHOW p:hover{
+  background-color: gray;
+}
