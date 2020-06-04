@@ -2,7 +2,7 @@ header, section {
 	display: block;
   }
 body {
-	background-color: #f9f8f6;
+	background-color: #FFE4E1;
 	background-position: center;
 	font-family: Georgia, Times, serif;
 	line-height: 1.4em;
@@ -10,7 +10,7 @@ body {
   }
 
 h1 {
-	background-color: #DDDDDD;
+	background-color: #D7EEFF;
 	color: black;
 	padding-left: 10px;
   padding-top: 20px;
@@ -40,8 +40,7 @@ section.vision p {
   font-size: 35px;
   padding-top: 140px;
   padding-bottom: 140px;
-  background-color: blue;
-/*  background-image:url("../images/yokohama_twilight.jpg"); */
+  background-image:url("../images/yokohama_twilight.jpg");
   background-position: center;
 }
 
@@ -56,6 +55,11 @@ article.developingCountries {
 section.programs h1{
 	padding-left: 15px;
 	font-size: 30px;
+	font-style: italic;
+	font-family: Courier;
+	border-top: solid;
+	border-bottom: solid;
+	border-color: #FFC792;
 }
 
 section.programs h2{
@@ -64,7 +68,7 @@ section.programs h2{
   padding-bottom: 20px;
 	font-size: 25px;
 	margin-bottom: 0px;
-	color: #0000FF;
+	color: black;
 }
 
 section.programs p{
@@ -80,8 +84,11 @@ section.programs h3{
 
 section.programs li{
 	line-height: 230%;
+	font-size: 110%;
+	font-family: Sans-Serif;
+	font-weight: bold;
 }
-
+/*
 div.Internship1 {
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -91,18 +98,22 @@ div.Internship1 {
 	width: 50%;
 	height: auto;
 }
+*/
 
-div.StudyAbroad1 {
+	div.programsTheme {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-right: 20px;
-	background-color: #FFEEFF;
-	margin-bottom: 15px;
+  background-color: #FFC7AF;
+	margin: 15px;
+	border-color: black;
+	border: solid;
+  border-radius: 8px;
 	height: auto;
 	width: 50%;
 	word-wrap: break-word;
 }
-
+/*
 div.Internship2 {
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -121,17 +132,54 @@ div.Volunteer2 {
 	width: 50%;
 	word-wrap: break-word;
 }
-
-.hidden {
+*/
+div.hidden {
 	display: none;
-  padding-left: 15%;
-  color: gray;
+  padding: 8%;
+	padding-top: 5%;
+	width: auto;
+	background-color: #FFAD90;
+  color: black;
+	border: solid;
+	border-color: #FFDEAD;
+  border-radius: 4px;
+}
+
+.hidden img{
+	width: 37%;
+	height: 18%;
+	display: inline-block;
+	border: solid;
+	border-color: #FFDEAD;
+  border-radius: 4px;
+	margin: 5%;
 }
 
 .SHOW {
   cursor: pointer;
   }
 
-.SHOW p:hover{
-  background-color: gray;
-}
+
+	footer{
+	  height: 10%;
+	  background: black;
+	position: relative;
+	}
+
+	.to-top{
+	  position: relative;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+		font-size: auto;
+		margin: 5%;
+	  width: 60px;
+	  height: 60px;
+	  right: 0;
+	  margin-bottom: 10px ;
+	  font-size: 50px;
+	  font-weight: bold;
+	  color: #fff;
+	  background: white;
+	  cursor: pointer;
+	}
