@@ -3,14 +3,14 @@ const ID_HIDDEN = "hidden";
 
 
 const PROGRAMS = [
-	{name: "Harvard University", nation: "U.S.A.", sort: "Business", overview: "A private Ivy League research university in Cambridge, Massachusetts. <br> Harvard University is the United States' oldest institution of higher learning and one of the most prestigious in the world.", period: "6 months (1 semester)", image1:'""', image2:'""'},
+	{name: "Harvard University", nation: "U.S.A.", sort: "Business", overview: "A private Ivy League research university in Cambridge, Massachusetts. <br> Harvard University is the United States' oldest institution of higher learning and one of the most prestigious in the world.", period: "6 months (1 semester)", image1:'"./images/Harvard_University_Library.jpg"', image2:'"./images/Harvard_University_campus.jpg"'},
   {name: "Oxford University", nation: "U.K.", sort: "Science", overview:"A public research university in Oxford, England. <br> Oxford  University is the the third Oldest university in the world and the highest ranked university in THE ranking four years in row.", period:"6 months (1 semester)", image1:'"./images/oxford-uni.jpg"', image2:'"./images/oxforduni-dining.jpg"'},
-	{name: "PwC", nation: "U.K.", sort: "Accounting", overview: "PwC is the biggest accounting firm in the world. Its main businesses are audit, taxation business, and consulting.", period: "6 months", image1:'""', image2:'""'},
-  {name: "Apple", nation: "U.S.A", sort: "IT", overview: "Apple is the biggest IT firm in the world. Its main businesses are development and sale of Internet-related products, digital appliance, and softwares.", period:"6 months", image1:'""', image2:'""'},
-	{name: "Grameen Bank", nation: "Bangladesh", sort: "Finance", overview: "Grameen Bank　is a microfinance organisation and community development bank founded in Bangladesh.  It makes small loans to the impoverished without requiring collateral to make them independent", period: "6 months", image1:'""', image2:'""'},
-  {name: "Toyota Tsusho Africa", nation: "South Africa", sort: "Trading", overview: ". Toyota Tsusho Afria is the African subsidiary of Japan-based trading company. It is focusing on renewable energy, mining and agriculture development to benefit Africa with the businesses.", period:"6 months", image1:'""', image2:'""'},
-	{name: "Teaching at elementary school", nation: "Philipine", sort: "education", overview: "Participants will teach local elementary students about your homeculture. Through communicating with them closely, you will know how different your culture and environment is from the world reality", period: "2 weeks", image1:'""', image2:'""'},
-  {name: "Environmental conservation at NPO", nation: "Brazil", sort: "environmentology", overview:"The deforestation of Amazon is a serious problem.Through going and volunteering there, you will know the reality behind the mass consumpition society.", period:"2 weeks", image1:'""', image2:'""'}
+	{name: "PwC", nation: "U.K.", sort: "Accounting", overview: "PwC is the biggest accounting firm in the world. Its main businesses are audit, taxation business, and consulting.", period: "6 months", image1:'"./images/PwC1.jpg"', image2:'"./images/PwC2.jpg"'},
+  {name: "Apple", nation: "U.S.A", sort: "IT", overview: "Apple is the biggest IT firm in the world. Its main businesses are development and sale of Internet-related products, digital appliance, and softwares.", period:"6 months", image1:'"./images/Google1.jpg"', image2:'"./images/Google2.jpg"'},
+	{name: "Grameen Bank", nation: "Bangladesh", sort: "Finance", overview: "Grameen Bank　is a microfinance organisation and community development bank founded in Bangladesh.  It makes small loans to the impoverished without requiring collateral to make them independent", period: "6 months", image1:'"./images/Grameen_Bank_image1.jpg"', image2:'"./images/Grameen_Bank_image2.jpg"'},
+  {name: "Toyota Tsusho Africa", nation: "South Africa", sort: "Trading", overview: ". Toyota Tsusho Afria is the African subsidiary of Japan-based trading company. It is focusing on renewable energy, mining and agriculture development to benefit Africa with the businesses.", period:"6 months", image1:'"./images/Toyota_image1.jpg"', image2:'"./images/Toyota_image2.jpg"'},
+	{name: "Teaching at a high school", nation: "Philippine", sort: "education", overview: "Participants will teach local high school students about your homeculture. Through communicating with them closely, you will know how different your culture and environment is from the world severe reality", period: "2 weeks", image1:'"./images/Philippine1.jpg"', image2:'"./images/Philippine2.jpg"'},
+  {name: "Environmental conservation at NPO", nation: "Brazil", sort: "environmentology", overview:"The deforestation of Amazon is a serious problem.Through going and volunteering there, you will know the reality behind the mass consumpition society.", period:"2 weeks", image1:'"./images/Amazon1.jpg"', image2:'"./images/Amazon2.jpg"'}
 ];
 
 let compactProgram = PROGRAMS.map(function(program) {
@@ -29,16 +29,18 @@ $.each(compactProgram, function(index, program) {
   let programName = $('<li>')
   	.html(program.name)
     .attr("id", ID_NAME + index);
+	//	.addClass("Basic")
+
+	let programDetail = $('<div>')
+	 	.html("<li> Nation : " + program.nation +"</li><li> Sort: " + program.sort + "</li> <li>Overview :<br>" + program.overview + "</li> <li> Period : "+ program.period+"</li> " + '<img src='+ program.image1 +'>' + '<img src='+ program.image2 +' >')
+	 	.attr("id", ID_HIDDEN + "_" + ID_NAME + index)
+	  .addClass("hidden");
 
   let show = $('<button>')
-  	.text("show more")
+  	.html("show more")
     .attr("id", ID_NAME + index)
+	//	.attr("onclick","myFunction()")
     .addClass("SHOW");
-
-  let programDetail = $('<div>')
-  	.html("<li> Nation : " + program.nation +"</li><li> Sort: " + program.sort + "</li> <li>Overview :<br>" + program.overview + "</li> <li> Period : "+ program.period+"</li> " + '<img src='+ program.image1 +'>' + '<img src='+ program.image2 +' >')
-  	.attr("id", ID_HIDDEN + "_" + ID_NAME + index)
-    .addClass("hidden");
 
   programName.append(programDetail);
   if ((program.name == "PwC")||(program.name == "Apple")){
@@ -47,11 +49,27 @@ $.each(compactProgram, function(index, program) {
   $('#directory1').append(programName,show);
 } else if ((program.name == "Grameen Bank")||(program.name == "Toyota Tsusho Africa")){
   $('#directory3').append(programName,show);
-} else if ((program.name == "Teaching at elementary school")||(program.name == "Environmental conservation at NPO")){
+} else if ((program.name == "Teaching at a high school")||(program.name == "Environmental conservation at NPO")){
   $('#directory4').append(programName,show);
 }
 
   show.on('click', displayDetail);
+/*
+	function myFunction(){
+		var basicText = document.getElementByClassName("Basic");
+		var moreText = document.getElementByClassName("hidden");
+		var btnText = document.getElementByClassName("SHOW");
+
+		if (basicText.style.display === "none"){
+			basicText.style.display = "inline";
+    	btnText.innerHTML = "Read more";
+    	moreText.style.display = "none";
+		} else {
+    	basicText.style.display = "none";
+    	btnText.innerHTML = "Read less";
+    	moreText.style.display = "inline";
+  	}
+	}*/
 
 });
 
@@ -64,7 +82,28 @@ function displayDetail(index) {
 
 
 //Required Implementation 2
+/*
+$("#keyword").on("input", searchEvent);
 
+function searchEvent() {
+  const results = [];
+  const inputText = $(this).val();
+
+  if (inputText) {
+    $("#programs").each((index, name) => {
+      if (name.textContent.indexOf(inputText) !== -1) {
+        results.push(name.textContent);
+      }
+    });
+
+    $("#info").empty();
+
+    $.each(results, (index, name) => {
+      $("#info").append("<li>" + name + "</li>");
+    });
+  }
+}
+*/
 
 //Additional Implementations
 //The button which makes user return to the top.
