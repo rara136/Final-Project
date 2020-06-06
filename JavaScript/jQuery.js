@@ -3,14 +3,14 @@ const ID_HIDDEN = "hidden";
 
 
 const PROGRAMS = [
-	{name: "Harvard University", nation: "U.S.A.", sort: "Business", overview: "A private Ivy League research university in Cambridge, Massachusetts. <br> Harvard University is the United States' oldest institution of higher learning and one of the most prestigious in the world.", period: "6 months (1 semester)", image1:'"./images/Harvard_University_Library.jpg"', image2:'"./images/Harvard_University_campus.jpg"'},
-  {name: "Oxford University", nation: "U.K.", sort: "Science", overview:"A public research university in Oxford, England. <br> Oxford  University is the the third Oldest university in the world and the highest ranked university in THE ranking four years in row.", period:"6 months (1 semester)", image1:'"./images/oxford-uni.jpg"', image2:'"./images/oxforduni-dining.jpg"'},
-	{name: "PwC", nation: "U.K.", sort: "Accounting", overview: "PwC is the biggest accounting firm in the world. Its main businesses are audit, taxation business, and consulting.", period: "6 months", image1:'"./images/PwC1.jpg"', image2:'"./images/PwC2.jpg"'},
-  {name: "Apple", nation: "U.S.A", sort: "IT", overview: "Apple is the biggest IT firm in the world. Its main businesses are development and sale of Internet-related products, digital appliance, and softwares.", period:"6 months", image1:'"./images/Google1.jpg"', image2:'"./images/Google2.jpg"'},
-	{name: "Grameen Bank", nation: "Bangladesh", sort: "Finance", overview: "Grameen Bank　is a microfinance organisation and community development bank founded in Bangladesh.  It makes small loans to the impoverished without requiring collateral to make them independent", period: "6 months", image1:'"./images/Grameen_Bank_image1.jpg"', image2:'"./images/Grameen_Bank_image2.jpg"'},
-  {name: "Toyota Tsusho Africa", nation: "South Africa", sort: "Trading", overview: ". Toyota Tsusho Afria is the African subsidiary of Japan-based trading company. It is focusing on renewable energy, mining and agriculture development to benefit Africa with the businesses.", period:"6 months", image1:'"./images/Toyota_image1.jpg"', image2:'"./images/Toyota_image2.jpg"'},
-	{name: "Teaching at a high school", nation: "Philippine", sort: "education", overview: "Participants will teach local high school students about your homeculture. Through communicating with them closely, you will know how different your culture and environment is from the world severe reality", period: "2 weeks", image1:'"./images/Philippine1.jpg"', image2:'"./images/Philippine2.jpg"'},
-  {name: "Environmental conservation at NPO", nation: "Brazil", sort: "environmentology", overview:"The deforestation of Amazon is a serious problem.Through going and volunteering there, you will know the reality behind the mass consumpition society.", period:"2 weeks", image1:'"./images/Amazon1.jpg"', image2:'"./images/Amazon2.jpg"'}
+	{name: "Harvard University", nation: "U.S.A.", sort: "Business", overview: "A private Ivy League research university in Cambridge, Massachusetts. <br> Harvard University is the United States' oldest institution of higher learning and one of the most prestigious in the world.", purpose: "To know the latest knowledges and business culture by learning business at one of the highest level university in the commercially biggest country.", period: "6 months (1 semester)", url: '"https://www.harvard.edu/"', image1:'"./images/Harvard_University_Library.jpg"', image2:'"./images/Harvard_University_campus.jpg"'},
+  {name: "California Institute of Technology", nation: "U.S.A", sort: "Science", overview:"A private research university in California. <br> California Institute of Technology is founded in 1891 and one of the highest ranked university in scientific fields.", purpose: "To know the latest technology and the atomosphere of the university by learning science at one of the highest level university in the scientifically biggest country.", period:"6 months (1 semester)", image1:'"./images/Caltech1.jpg"', image2:'"./images/Caltech2.jpg"'},
+	{name: "PwC", nation: "U.K.", sort: "Accounting", overview: "PwC is the biggest accounting firm in the world. Its main businesses are audit, taxation business, and consulting.", purpose:"To learn the top business skills, corporate culture, and how to do business getting along with by working at the top firm in the industry." ,period: "6 months", image1:'"./images/PwC1.jpg"', image2:'"./images/PwC2.jpg"'},
+  {name: "Google", nation: "U.S.A", sort: "IT", overview: "Google is the biggest IT firm in the world. Its main businesses are development and sale of Internet-related products, digital appliance, and softwares.", purpose: "To learn the top business skills, corporate culture, and how to create products getting along with cultures by working at the top firm in the industry.",period:"6 months", image1:'"./images/Google1.jpg"', image2:'"./images/Google2.jpg"'},
+	{name: "Grameen Bank", nation: "Bangladesh", sort: "Finance", overview: "Grameen Bank　is a microfinance organisation and community development bank founded in Bangladesh. It makes small loans to the impoverished without requiring collateral to make them independent.",purpose: "To learn the business skills, business mindset, and severe reality by working at the firm in a developing country.", period: "6 months", image1:'"./images/Grameen_Bank_image1.jpg"', image2:'"./images/Grameen_Bank_image2.jpg"'},
+  {name: "Toyota Tsusho Africa", nation: "South Africa", sort: "Trading", overview: ". Toyota Tsusho Afria is the African subsidiary of Japan-based trading company. It is focusing on renewable energy, mining and agriculture development to benefit Africa with the businesses.",purpose: "To learn the business skills, business mindset, and severe reality by working at the firm in a developing country.", period:"6 months", image1:'"./images/Toyota_image1.jpg"', image2:'"./images/Toyota_image2.jpg"'},
+	{name: "Teaching at a high school", nation: "Philippine", sort: "education", overview: "Participants will teach local high school students about your homeculture. Through communicating with them closely, you will know how different your culture and environment is from the world severe reality", purpose: "To learn severe reality and how to communicate with people who have a different culture and background by volunteering in a developing country.",period: "2 weeks", image1:'"./images/Philippine1.jpg"', image2:'"./images/Philippine2.jpg"'},
+  {name: "Environmental conservation at NPO", nation: "Brazil", sort: "environmentology", overview:"The deforestation of Amazon is a serious problem.Through going and volunteering there, you will know the reality behind the mass consumpition society.",purpose: "To learn severe reality and how to communicate with people who have a different culture and background by volunteering in a developing country.", period:"2 weeks", image1:'"./images/Amazon1.jpg"', image2:'"./images/Amazon2.jpg"'}
 ];
 
 let compactProgram = PROGRAMS.map(function(program) {
@@ -19,6 +19,7 @@ let compactProgram = PROGRAMS.map(function(program) {
   	nation: program.nation,
     sort: program.sort,
     overview: program.overview,
+		purpose: program.purpose,
     period: program.period,
 		image1: program.image1,
 		image2: program.image2
@@ -32,7 +33,7 @@ $.each(compactProgram, function(index, program) {
 	//	.addClass("Basic")
 
 	let programDetail = $('<div>')
-	 	.html("<li> Nation : " + program.nation +"</li><li> Sort: " + program.sort + "</li> <li>Overview :<br>" + program.overview + "</li> <li> Period : "+ program.period+"</li> " + '<img src='+ program.image1 +'>' + '<img src='+ program.image2 +' >')
+	 	.html("<li> Nation : " + program.nation +"</li><li> Sort : " + program.sort + "</li> <li>Overview :<br>" + program.overview + "</li> <li> Purpose : <br>" + program.purpose +"</li><li>Period : "+ program.period+"</li> <img src="+ program.image1 +'>' + '<img src='+ program.image2 +' >')
 	 	.attr("id", ID_HIDDEN + "_" + ID_NAME + index)
 	  .addClass("hidden");
 
@@ -45,7 +46,7 @@ $.each(compactProgram, function(index, program) {
   programName.append(programDetail);
   if ((program.name == "PwC")||(program.name == "Apple")){
   $('#directory2').append(programName,show);
-} else if ((program.name == "Harvard University")||(program.name == "Oxford University")){
+} else if ((program.name == "Harvard University")||(program.name == "California Institute of Technology")){
   $('#directory1').append(programName,show);
 } else if ((program.name == "Grameen Bank")||(program.name == "Toyota Tsusho Africa")){
   $('#directory3').append(programName,show);
