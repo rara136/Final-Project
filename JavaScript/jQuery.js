@@ -44,7 +44,7 @@ $.each(compactProgram, function(index, program) {
     .addClass("SHOW");
 
   programName.append(programDetail);
-  if ((program.name == "PwC")||(program.name == "Apple")){
+  if ((program.name == "PwC")||(program.name == "Google")){
   $('#directory2').append(programName,show);
 } else if ((program.name == "Harvard University")||(program.name == "California Institute of Technology")){
   $('#directory1').append(programName,show);
